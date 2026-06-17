@@ -1,9 +1,12 @@
 Package: cyclinginfra
-Title: What the Package Does (One Line, Title Case)
+Title: Urban Cycling Infrastructure Accessibility Analysis
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Andrea Belen", "Cretu Toma", , "acretuto@uni-muenster.de", role = c("aut", "cre"))
+Description: A tool for downloading, classifying and visualising urban cycling
+    infrastructure using OpenStreetMap data. Provides S3 classes in order to represent
+    cycling networks and their safety classification, together with functions for
+    classifying road types by safety level and producing safety maps.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -17,4 +20,6 @@ Imports:
     sf
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
