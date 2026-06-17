@@ -13,8 +13,9 @@ knitr::opts_chunk$set(
   echo    = TRUE,
   message = FALSE,
   warning = FALSE,
-  fig.width  = 10,
-  fig.height = 6
+  fig.width  = 7,
+  fig.height = 4,
+  out.width  = "100%"
 )
 ```
 
@@ -52,7 +53,7 @@ data(amsterdam)
 amsterdam_classified <- classify_bike_infrastructure(amsterdam)
 ```
 
-```{r safety-map, fig.width = 12, fig.height = 5}
+```{r safety-map-amsterdam, fig.width = 12, fig.height = 5}
 plot_cycling_safety_map(munster_classified)
 plot_cycling_safety_map(amsterdam_classified)
 ```
