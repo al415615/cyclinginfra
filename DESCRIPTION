@@ -8,6 +8,8 @@ Description: A tool for downloading, classifying and visualising urban cycling
     cycling networks and their safety classification, together with functions for
     classifying road types by safety level and producing safety maps.
 License: MIT + file LICENSE
+URL: https://al415615.github.io/cyclinginfra/, https://github.com/al415615/cyclinginfra
+BugReports: https://github.com/al415615/cyclinginfra/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
