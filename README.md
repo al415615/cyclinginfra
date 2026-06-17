@@ -128,12 +128,13 @@ Running `plot_cycling_safety_map()` on Münster produces a map like this, green 
 
 ## Learn more
 
-See the full vignette for a reproducible walkthrough of every function:
+[![Vignette](https://img.shields.io/badge/vignette-introduction-blue)](https://al415615.github.io/cyclinginfra/articles/introduction.html)
+
+Or locally after installation:
 
 ```r
 vignette("introduction", package = "cyclinginfra")
 ```
-
 ---
 
 ## Data source

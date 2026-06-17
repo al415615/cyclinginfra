@@ -83,7 +83,7 @@ plot_cycling_safety_map <- function(classification, show_stats = TRUE, basemap  
     ggplot2::theme_minimal(base_size = 11)
  
   # combine side by side
-  combined <- map_plot + bar_plot + patchwork::plot_layout(widths = c(2, 1))
+  combined <- patchwork::wrap_plots(map_plot, bar_plot, widths = c(2, 1))
   print(combined)
   invisible(combined)
   }
