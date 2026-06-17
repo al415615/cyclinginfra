@@ -1,0 +1,20 @@
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/articles/introduction.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/classify_bike_infrastructure.html</loc></url>
+<url><loc>/reference/get_cycling_network.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/new_cycling_classification.html</loc></url>
+<url><loc>/reference/new_cycling_network.html</loc></url>
+<url><loc>/reference/plot.cycling_classification.html</loc></url>
+<url><loc>/reference/plot.cycling_network.html</loc></url>
+<url><loc>/reference/plot_cycling_safety_map.html</loc></url>
+<url><loc>/reference/print.cycling_classification.html</loc></url>
+<url><loc>/reference/print.cycling_network.html</loc></url>
+</urlset>
+
