@@ -12,7 +12,9 @@ vignette: >
 knitr::opts_chunk$set(
   echo    = TRUE,
   message = FALSE,
-  warning = FALSE
+  warning = FALSE,
+  fig.width  = 10,
+  fig.height = 6
 )
 ```
 
@@ -22,7 +24,7 @@ knitr::opts_chunk$set(
 
 In order to prove that the package actually works and as a way to prove its relevance, here is a little piece of code that executes everything learnt:
 
-```{r}
+```{r safety-map, fig.width = 12, fig.height = 5}
 library(cyclinginfra)
 
 # load the pre-downloaded cycling network of Muenster
@@ -50,7 +52,7 @@ data(amsterdam)
 amsterdam_classified <- classify_bike_infrastructure(amsterdam)
 ```
 
-```{r}
+```{r safety-map, fig.width = 12, fig.height = 5}
 plot_cycling_safety_map(munster_classified)
 plot_cycling_safety_map(amsterdam_classified)
 ```
