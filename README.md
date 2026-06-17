@@ -11,7 +11,7 @@
 
 ## What it does
 
-Given any city name, **cyclinginfra** fetches the full cycling network from OSM and classifies every road segment by safety level — from physically separated tracks all the way down to roads where bikes and cars share space with no markings.
+Given any city name, **cyclinginfra** fetches the full cycling network from OSM and classifies every road segment by safety level, from physically separated tracks all the way down to roads where bikes and cars share space with no markings.
 
 | Level | Type | Description |
 |-------|------|-------------|
@@ -116,9 +116,23 @@ print(cl)
 
 ## Example output
 
-Running `plot_cycling_safety_map()` on Münster produces a map like this — green dominates, which reflects Münster's reputation as one of Germany's most cycling-friendly cities 🚲
+Running `plot_cycling_safety_map()` on Münster produces a map like this, green dominates, which reflects Münster's reputation as one of Germany's most cycling friendly cities 🚲
 
-> *See the vignette for a full reproducible example with synthetic data that runs entirely offline.*
+### Münster, Germany 🇩🇪
+![Cycling safety map of Münster](man/figures/munster_map.png)
+
+### Amsterdam, Netherlands 🇳🇱
+![Cycling safety map of Amsterdam](man/figures/amsterdam_map.png)
+
+---
+
+## Learn more
+
+See the full vignette for a reproducible walkthrough of every function:
+
+```r
+vignette("introduction", package = "cyclinginfra")
+```
 
 ---
 
@@ -135,4 +149,4 @@ All data come from [OpenStreetMap](https://www.openstreetmap.org) contributors, 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/belen-cretu-toma/)
 [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/al415615)
 
-*Assignment 1 · Spatial Data Science with R · University of Münster, 2026*
+*Assignment 2 · Spatial Data Science with R · University of Münster, 2026*
