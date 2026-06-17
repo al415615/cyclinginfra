@@ -1,0 +1,60 @@
+---
+title: "Introduction to cyclinginfra"
+author: "Andrea Belen Cretu Toma"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to cyclinginfra}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo    = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width  = 7,
+  fig.height = 4,
+  out.width  = "100%"
+)
+```
+
+# Examples
+
+## Case Study of Münster
+
+In order to prove that the package actually works and as a way to prove its relevance, here is a little piece of code that executes everything learnt:
+
+```{r safety-map, fig.width = 12, fig.height = 5}
+library(cyclinginfra)
+
+# load the pre-downloaded cycling network of Muenster
+data(munster)
+print(munster)
+plot(munster)
+
+# classify the infrastructure
+munster_classified <- classify_bike_infrastructure(munster)
+print(munster_classified)
+
+# create the safety map
+plot_cycling_safety_map(munster_classified)
+```
+
+## Comparison in between 2 cities
+
+```{r}
+# compare Münster and Amsterdam
+munster_classified <- classify_bike_infrastructure(munster)
+```
+
+```{r}
+data(amsterdam)
+amsterdam_classified <- classify_bike_infrastructure(amsterdam)
+```
+
+```{r safety-map-amsterdam, fig.width = 12, fig.height = 5}
+plot_cycling_safety_map(munster_classified)
+plot_cycling_safety_map(amsterdam_classified)
+```
+
