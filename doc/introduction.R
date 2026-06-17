@@ -35,3 +35,18 @@ amsterdam_classified <- classify_bike_infrastructure(amsterdam)
 plot_cycling_safety_map(munster_classified)
 plot_cycling_safety_map(amsterdam_classified)
 
+## ----real-usage, eval = FALSE-------------------------------------------------
+# # download directly from OpenStreetMap (requires internet connection)
+# munster <- get_cycling_network("Muenster, Germany")
+# print(munster)
+# plot(munster)
+# 
+# munster_classified <- classify_bike_infrastructure(munster)
+# print(munster_classified)
+# plot_cycling_safety_map(munster_classified)
+# 
+# # compare with another city
+# amsterdam <- get_cycling_network("Amsterdam, Netherlands")
+# amsterdam_classified <- classify_bike_infrastructure(amsterdam)
+# plot_cycling_safety_map(amsterdam_classified)
+
