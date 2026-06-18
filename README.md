@@ -124,16 +124,16 @@ print(cl)
 Running `plot_cycling_safety_map()` on Münster produces a map like this, green dominates, which reflects Münster's reputation as one of Germany's most cycling friendly cities 🚲
 
 ### Münster, Germany 🇩🇪
-![Cycling safety map of Münster](man/figures/munster_map.png)
+<img src="man/figures/munster_map.png" width="700"/>
 
 ### Amsterdam, Netherlands 🇳🇱
-![Cycling safety map of Amsterdam](man/figures/amsterdam_map.png)
+<img src="man/figures/amsterdam_map.png" width="700"/>
 
 ### Comparison 🇩🇪 vs 🇳🇱
-![Comparison between Münster and Amsterdam](man/figures/comparison_map.png)
+<img src="man/figures/comparison_map.png" width="700"/>
 
 ### Connectivity analysis 🇩🇪
-![Connectivity analysis of Münster](man/figures/connectivity_map.png)
+<img src="man/figures/connectivity_map.png" width="700"/>
 
 ---
 
