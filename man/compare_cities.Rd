@@ -15,7 +15,7 @@ compare_cities(city1, city2)
 A combined \code{patchwork} plot, invisibly.
 }
 \description{
-Creates a side-by-side safety map comparing the cycling infrastructure
+Creates a side by side safety map comparing the cycling infrastructure
 of two cities.
 }
 \examples{

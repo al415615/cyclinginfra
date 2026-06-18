@@ -55,7 +55,14 @@
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/al415615/cyclinginfra/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -77,6 +84,7 @@
 <h2 id="what-it-does">What it does<a class="anchor" aria-label="anchor" href="#what-it-does"></a>
 </h2>
 <p>Given any city name, <strong>cyclinginfra</strong> fetches the full cycling network from OSM and classifies every road segment by safety level, from physically separated tracks all the way down to roads where bikes and cars share space with no markings.</p>
+<p>Safety is measured by physical separation from motor traffic. A dedicated track scores highest because it is fully separated. Completeness refers to the percentage of the road network that has any form of cycling infrastructure.</p>
 <table class="table">
 <colgroup>
 <col width="26%">
@@ -149,7 +157,7 @@
 <h2 id="quick-start">Quick start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">cyclinginfra</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://al415615.github.io/cyclinginfra/" class="external-link">cyclinginfra</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># 1. Download the cycling network of any city</span></span>
 <span><span class="va">net</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_cycling_network.html">get_cycling_network</a></span><span class="op">(</span><span class="st">"Muenster, Germany"</span><span class="op">)</span></span>
@@ -231,6 +239,14 @@
 <td><code>plot_cycling_safety_map(classification)</code></td>
 <td>Safety map + summary bar chart</td>
 </tr>
+<tr>
+<td><code>compare_cities(city1, city2)</code></td>
+<td>Side by side comparison of two cities</td>
+</tr>
+<tr>
+<td><code>analyze_connectivity(network)</code></td>
+<td>Identify connected and isolated segments</td>
+</tr>
 </tbody>
 </table>
 <hr>
@@ -242,16 +258,22 @@
 <div class="section level3">
 <h3 id="münster-germany-de">Münster, Germany 🇩🇪<a class="anchor" aria-label="anchor" href="#m%C3%BCnster-germany-de"></a>
 </h3>
-<div class="float">
-<img src="reference/figures/munster_map.png" alt="Cycling safety map of Münster"><div class="figcaption">Cycling safety map of Münster</div>
-</div>
+<p><img src="reference/figures/munster_map.png" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="amsterdam-netherlands-netherlands">Amsterdam, Netherlands 🇳🇱<a class="anchor" aria-label="anchor" href="#amsterdam-netherlands-netherlands"></a>
 </h3>
-<div class="float">
-<img src="reference/figures/amsterdam_map.png" alt="Cycling safety map of Amsterdam"><div class="figcaption">Cycling safety map of Amsterdam</div>
+<p><img src="reference/figures/amsterdam_map.png" width="700"></p>
 </div>
+<div class="section level3">
+<h3 id="comparison-de-vs-netherlands">Comparison 🇩🇪 vs 🇳🇱<a class="anchor" aria-label="anchor" href="#comparison-de-vs-netherlands"></a>
+</h3>
+<p><img src="reference/figures/comparison_map.png" width="700"></p>
+</div>
+<div class="section level3">
+<h3 id="connectivity-analysis-de">Connectivity analysis 🇩🇪<a class="anchor" aria-label="anchor" href="#connectivity-analysis-de"></a>
+</h3>
+<p><img src="reference/figures/connectivity_map.png" width="700"></p>
 <hr>
 </div>
 </div>
@@ -281,7 +303,15 @@
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="license">
+    <div class="links">
+<h2 data-toc-skip>Links</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/al415615/cyclinginfra/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/al415615/cyclinginfra/issues" class="external-link">Report a bug</a></li>
+</ul>
+</div>
+
+<div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>

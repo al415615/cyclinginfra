@@ -39,8 +39,11 @@ get_cycling_network <- function(city, crs = 4326, bbox_km = 5) {
   
 
     # cache: if we already have the file in the cache, no need to calculate again (Muenster is executed twice)
-    cache_file <- paste0(gsub("[^a-zA-Z0-9]", "_", city), "_", bbox_km, "km_cycling.rds")
-    
+    cache_dir <- tools::R_user_dir("cyclinginfra", which = "cache")
+    dir.create(cache_dir, recursive = TRUE, showWarnings = FALSE)
+    cache_file <- file.path(cache_dir, paste0(
+      gsub("[^a-zA-Z0-9]", "_", city), "_", bbox_km, "km_cycling.rds"
+    ))    
     if (file.exists(cache_file)) {
       message("Loading cached data for: ", city)
       return(readRDS(cache_file))

@@ -7,8 +7,8 @@
 analyze_connectivity(network, min_size = 10)
 }
 \arguments{
-\item{network}{A \code{cycling_network} object returned by
-\code{\link[=get_cycling_network]{get_cycling_network()}}.}
+\item{network}{A \code{cycling_network} instance returned by
+\code{get_cycling_network()}.}
 
 \item{min_size}{Integer. Components with fewer segments than this value
 are labelled as "isolated". Defaults to \code{10}.}
@@ -18,7 +18,7 @@ A \code{ggplot} object showing the network coloured by connectivity,
 invisibly.
 }
 \description{
-Converts a \code{cycling_network} object into an \code{sfnetworks} graph and
+Converts a \code{cycling_network} instance into an \code{sfnetworks} graph and
 identifies connected components. Segments belonging to the same connected
 component can be reached from one another without leaving the cycling
 network. Isolated segments (small components) indicate poorly connected

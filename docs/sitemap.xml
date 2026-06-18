@@ -6,9 +6,13 @@
 <url><loc>/articles/introduction.html</loc></url>
 <url><loc>/authors.html</loc></url>
 <url><loc>/index.html</loc></url>
+<url><loc>/reference/amsterdam.html</loc></url>
+<url><loc>/reference/analyze_connectivity.html</loc></url>
 <url><loc>/reference/classify_bike_infrastructure.html</loc></url>
+<url><loc>/reference/compare_cities.html</loc></url>
 <url><loc>/reference/get_cycling_network.html</loc></url>
 <url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/munster.html</loc></url>
 <url><loc>/reference/new_cycling_classification.html</loc></url>
 <url><loc>/reference/new_cycling_network.html</loc></url>
 <url><loc>/reference/plot.cycling_classification.html</loc></url>

@@ -54,7 +54,14 @@
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/al415615/cyclinginfra/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -72,7 +79,7 @@
 Cretu Toma</h4>
             
       
-
+      <small class="dont-index">Source: <a href="https://github.com/al415615/cyclinginfra/blob/HEAD/vignettes/introduction.Rmd" class="external-link"><code>vignettes/introduction.Rmd</code></a></small>
       <div class="hidden name"><code>introduction.Rmd</code></div>
 
     </div>
@@ -89,7 +96,7 @@ Cretu Toma</h4>
 prove its relevance, here is a little piece of code that executes
 everything learnt:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">cyclinginfra</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://al415615.github.io/cyclinginfra/" class="external-link">cyclinginfra</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># load the pre-downloaded cycling network of Muenster</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">munster</span><span class="op">)</span></span>
@@ -140,44 +147,24 @@ everything learnt:</p>
 </h3>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># compare Münster and Amsterdam</span></span>
-<span><span class="va">munster_classified</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/classify_bike_infrastructure.html">classify_bike_infrastructure</a></span><span class="op">(</span><span class="va">munster</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">amsterdam</span><span class="op">)</span></span>
+<span><span class="va">amsterdam_classified</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/classify_bike_infrastructure.html">classify_bike_infrastructure</a></span><span class="op">(</span><span class="va">amsterdam</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/compare_cities.html">compare_cities</a></span><span class="op">(</span><span class="va">munster_classified</span>, <span class="va">amsterdam_classified</span><span class="op">)</span></span></code></pre></div>
+<p><img src="introduction_files/figure-html/compare-1.png" class="r-plt" alt="" width="100%"></p>
+</div>
+<div class="section level3">
+<h3 id="connectivity-analysis">Connectivity analysis<a class="anchor" aria-label="anchor" href="#connectivity-analysis"></a>
+</h3>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">amsterdam</span><span class="op">)</span></span>
-<span><span class="va">amsterdam_classified</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/classify_bike_infrastructure.html">classify_bike_infrastructure</a></span><span class="op">(</span><span class="va">amsterdam</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_cycling_safety_map.html">plot_cycling_safety_map</a></span><span class="op">(</span><span class="va">munster_classified</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## </span></span>
-<span><span class="co">## Infrastructure summary for Muenster, Germany :</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## |infra_type      | total_length_km|</span></span>
-<span><span class="co">## |:---------------|---------------:|</span></span>
-<span><span class="co">## |footway track   |          357.57|</span></span>
-<span><span class="co">## |shared road     |          135.98|</span></span>
-<span><span class="co">## |dedicated track |           30.34|</span></span>
-<span><span class="co">## |painted lane    |            1.82|</span></span></code></pre>
-<p><img src="introduction_files/figure-html/safety-map-amsterdam-1.png" class="r-plt" alt="" width="100%"><img src="introduction_files/figure-html/safety-map-amsterdam-2.png" class="r-plt" alt="" width="100%"></p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_cycling_safety_map.html">plot_cycling_safety_map</a></span><span class="op">(</span><span class="va">amsterdam_classified</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## </span></span>
-<span><span class="co">## Infrastructure summary for Amsterdam, Netherlands :</span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## </span></span>
-<span><span class="co">## |infra_type      | total_length_km|</span></span>
-<span><span class="co">## |:---------------|---------------:|</span></span>
-<span><span class="co">## |dedicated track |          555.03|</span></span>
-<span><span class="co">## |shared road     |           97.47|</span></span>
-<span><span class="co">## |painted lane    |           20.54|</span></span>
-<span><span class="co">## |footway track   |            9.03|</span></span>
-<span><span class="co">## |shared lane     |            1.83|</span></span></code></pre>
-<p><img src="introduction_files/figure-html/safety-map-amsterdam-3.png" class="r-plt" alt="" width="100%"><img src="introduction_files/figure-html/safety-map-amsterdam-4.png" class="r-plt" alt="" width="100%"></p>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/analyze_connectivity.html">analyze_connectivity</a></span><span class="op">(</span><span class="va">munster</span><span class="op">)</span></span></code></pre></div>
+<p><img src="introduction_files/figure-html/connectivity-1.png" class="r-plt" alt="" width="100%"></p>
 </div>
 <div class="section level3">
 <h3 id="real-world-usage">Real world usage<a class="anchor" aria-label="anchor" href="#real-world-usage"></a>
 </h3>
 <p>In practice, instead of loading pre saved data, you would download
 the network directly from OpenStreetMap:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># download directly from OpenStreetMap (requires internet connection)</span></span>
 <span><span class="va">munster</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_cycling_network.html">get_cycling_network</a></span><span class="op">(</span><span class="st">"Muenster, Germany"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">munster</span><span class="op">)</span></span>
