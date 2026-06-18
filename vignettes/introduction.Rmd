@@ -43,19 +43,17 @@ plot_cycling_safety_map(munster_classified)
 
 ## Comparison in between 2 cities
 
-```{r}
+```{r compare}
 # compare Münster and Amsterdam
-munster_classified <- classify_bike_infrastructure(munster)
-```
-
-```{r}
 data(amsterdam)
 amsterdam_classified <- classify_bike_infrastructure(amsterdam)
+compare_cities(munster_classified, amsterdam_classified)
 ```
 
-```{r safety-map-amsterdam, fig.width = 12, fig.height = 5}
-plot_cycling_safety_map(munster_classified)
-plot_cycling_safety_map(amsterdam_classified)
+## Connectivity analysis
+
+```{r connectivity}
+analyze_connectivity(munster)
 ```
 
 ## Real world usage

@@ -23,17 +23,14 @@ print(munster_classified)
 # create the safety map
 plot_cycling_safety_map(munster_classified)
 
-## -----------------------------------------------------------------------------
+## ----compare------------------------------------------------------------------
 # compare Münster and Amsterdam
-munster_classified <- classify_bike_infrastructure(munster)
-
-## -----------------------------------------------------------------------------
 data(amsterdam)
 amsterdam_classified <- classify_bike_infrastructure(amsterdam)
+compare_cities(munster_classified, amsterdam_classified)
 
-## ----safety-map-amsterdam, fig.width = 12, fig.height = 5---------------------
-plot_cycling_safety_map(munster_classified)
-plot_cycling_safety_map(amsterdam_classified)
+## ----connectivity-------------------------------------------------------------
+analyze_connectivity(munster)
 
 ## ----real-usage, eval = FALSE-------------------------------------------------
 # # download directly from OpenStreetMap (requires internet connection)

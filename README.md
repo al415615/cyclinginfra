@@ -13,6 +13,9 @@
 
 Given any city name, **cyclinginfra** fetches the full cycling network from OSM and classifies every road segment by safety level, from physically separated tracks all the way down to roads where bikes and cars share space with no markings.
 
+Safety is measured by physical separation from motor traffic. A dedicated track scores highest because it is fully separated. Completeness refers to the percentage of the road network that has any form of cycling infrastructure.
+
+
 | Level | Type | Description |
 |-------|------|-------------|
 | 🟢 1 | `dedicated track` | Fully separated from motor traffic |
@@ -111,6 +114,8 @@ print(cl)
 | `get_cycling_network(city)` | Download OSM cycling data for a city |
 | `classify_bike_infrastructure(network)` | Classify segments by safety level |
 | `plot_cycling_safety_map(classification)` | Safety map + summary bar chart |
+| `compare_cities(city1, city2)` | Side by side comparison of two cities |
+| `analyze_connectivity(network)` | Identify connected and isolated segments |
 
 ---
 
@@ -123,6 +128,12 @@ Running `plot_cycling_safety_map()` on Münster produces a map like this, green 
 
 ### Amsterdam, Netherlands 🇳🇱
 ![Cycling safety map of Amsterdam](man/figures/amsterdam_map.png)
+
+### Comparison 🇩🇪 vs 🇳🇱
+![Comparison between Münster and Amsterdam](man/figures/comparison_map.png)
+
+### Connectivity analysis 🇩🇪
+![Connectivity analysis of Münster](man/figures/connectivity_map.png)
 
 ---
 

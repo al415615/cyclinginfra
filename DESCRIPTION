@@ -19,7 +19,9 @@ Imports:
     ggspatial,
     osmdata,
     patchwork,
-    sf
+    sf,
+    sfnetworks,
+    tidygraph
 Suggests: 
     knitr,
     rmarkdown,
