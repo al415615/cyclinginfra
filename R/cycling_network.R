@@ -53,6 +53,7 @@ new_cycling_network <- function(city, sf_lines) {
 #' Displays a short summary of the cycling network instance to the console.
 #'
 #' @param x A `cycling_network` instance.
+#' 
 #' @param ... Further arguments (currently ignored).
 #'
 #' @return `x`, invisibly.
