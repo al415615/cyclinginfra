@@ -55,7 +55,7 @@ areas."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/math
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Analyse the connectivity of a cycling network</h1>
-    <small class="dont-index">Source: <a href="https://github.com/al415615/cyclinginfra/blob/HEAD/R/analyze_connectivity.R" class="external-link"><code>R/analyze_connectivity.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/al415615/cyclinginfra/blob/HEAD/R/cycling_network.R" class="external-link"><code>R/cycling_network.R</code></a></small>
     <div class="hidden name"><code>analyze_connectivity.Rd</code></div>
     </div>
 
@@ -68,7 +68,9 @@ areas.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">analyze_connectivity</span><span class="op">(</span><span class="va">network</span>, min_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">analyze_connectivity</span><span class="op">(</span><span class="va">network</span>, min_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">analyze_connectivity.default</span><span class="op">(</span><span class="va">network</span>, min_size <span class="op">=</span> <span class="fl">10</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -83,6 +85,10 @@ areas.</p>
 <dt id="arg-min-size">min_size<a class="anchor" aria-label="anchor" href="#arg-min-size"></a></dt>
 <dd><p>Integer. Components with fewer segments than this value
 are labelled as "isolated". Defaults to <code>10</code>.</p></dd>
+
+
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dd><p>Further arguments passed to methods.</p></dd>
 
 </dl></div>
     <div id="value">

@@ -55,7 +55,7 @@ and optionally prints the raw summary table to the console."><!-- mathjax --><sc
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Plot a cycling safety map with summary statistics</h1>
-    <small class="dont-index">Source: <a href="https://github.com/al415615/cyclinginfra/blob/HEAD/R/plot_cycling_safety_map.R" class="external-link"><code>R/plot_cycling_safety_map.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/al415615/cyclinginfra/blob/HEAD/R/cycling_classification.R" class="external-link"><code>R/cycling_classification.R</code></a></small>
     <div class="hidden name"><code>plot_cycling_safety_map.Rd</code></div>
     </div>
 
@@ -68,7 +68,14 @@ and optionally prints the raw summary table to the console.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_cycling_safety_map</span><span class="op">(</span><span class="va">classification</span>, show_stats <span class="op">=</span> <span class="cn">TRUE</span>, basemap <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">plot_cycling_safety_map</span><span class="op">(</span><span class="va">classification</span>, show_stats <span class="op">=</span> <span class="cn">TRUE</span>, basemap <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">plot_cycling_safety_map.default</span><span class="op">(</span></span>
+<span>  <span class="va">classification</span>,</span>
+<span>  show_stats <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  basemap <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -87,6 +94,10 @@ and optionally prints the raw summary table to the console.</p>
 <dd><p>Logical. If <code>TRUE</code>, adds a light basemap tile beneath the
 network (requires <code>ggspatial</code> and internet access). Defaults to <code>FALSE</code>.</p></dd>
 
+
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dd><p>Further arguments passed to methods.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -100,6 +111,7 @@ network (requires <code>ggspatial</code> and internet access). Defaults to <code
 <span class="r-in"><span><span class="fu">plot_cycling_safety_map</span><span class="op">(</span><span class="va">cl</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">plot_cycling_safety_map</span><span class="op">(</span><span class="va">cl</span>, show_stats <span class="op">=</span> <span class="cn">FALSE</span>, basemap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

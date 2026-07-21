@@ -52,7 +52,7 @@ of two cities."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/l
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Compare cycling infrastructure of two cities</h1>
-    <small class="dont-index">Source: <a href="https://github.com/al415615/cyclinginfra/blob/HEAD/R/compare_cities.R" class="external-link"><code>R/compare_cities.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/al415615/cyclinginfra/blob/HEAD/R/cycling_classification.R" class="external-link"><code>R/cycling_classification.R</code></a></small>
     <div class="hidden name"><code>compare_cities.Rd</code></div>
     </div>
 
@@ -62,7 +62,9 @@ of two cities.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">compare_cities</span><span class="op">(</span><span class="va">city1</span>, <span class="va">city2</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">compare_cities</span><span class="op">(</span><span class="va">city1</span>, <span class="va">city2</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">compare_cities.default</span><span class="op">(</span><span class="va">city1</span>, <span class="va">city2</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -75,6 +77,10 @@ of two cities.</p>
 
 <dt id="arg-city-">city2<a class="anchor" aria-label="anchor" href="#arg-city-"></a></dt>
 <dd><p>A <code>cycling_classification</code> instance for the second city.</p></dd>
+
+
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dd><p>Further arguments passed to methods.</p></dd>
 
 </dl></div>
     <div id="value">

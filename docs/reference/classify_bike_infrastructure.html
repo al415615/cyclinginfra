@@ -54,7 +54,7 @@ classification and aggregate length statistics."><!-- mathjax --><script src="ht
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Classify cycling segments by infrastructure type</h1>
-    <small class="dont-index">Source: <a href="https://github.com/al415615/cyclinginfra/blob/HEAD/R/classify_bike_infrastructure.R" class="external-link"><code>R/classify_bike_infrastructure.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/al415615/cyclinginfra/blob/HEAD/R/cycling_network.R" class="external-link"><code>R/cycling_network.R</code></a></small>
     <div class="hidden name"><code>classify_bike_infrastructure.Rd</code></div>
     </div>
 
@@ -66,7 +66,9 @@ classification and aggregate length statistics.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">classify_bike_infrastructure</span><span class="op">(</span><span class="va">network</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">classify_bike_infrastructure</span><span class="op">(</span><span class="va">network</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">classify_bike_infrastructure.default</span><span class="op">(</span><span class="va">network</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -76,6 +78,10 @@ classification and aggregate length statistics.</p>
 <dl><dt id="arg-network">network<a class="anchor" aria-label="anchor" href="#arg-network"></a></dt>
 <dd><p>A <code>cycling_network</code> instance returned by
 <code><a href="get_cycling_network.html">get_cycling_network()</a></code>.</p></dd>
+
+
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dd><p>Further arguments passed to methods.</p></dd>
 
 </dl></div>
     <div id="value">

@@ -87,7 +87,90 @@ Cretu Toma</h4>
     
     
 <div class="section level2">
-<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<p><strong>cyclinginfra</strong> is an R package for downloading,
+classifying and visualising urban cycling infrastructure using freely
+available <a href="https://www.openstreetmap.org" class="external-link">OpenStreetMap</a>
+(OSM) data. Built as part of the <em>Spatial Data Science with R</em>
+course at the University of Münster 🇩🇪</p>
+<p>Given any city name, <strong>cyclinginfra</strong> fetches the full
+cycling network from OSM and classifies every road segment by safety
+level, from physically separated tracks all the way down to roads where
+bikes and cars share space with no markings.</p>
+<p>Safety is measured by physical separation from motor traffic. A
+dedicated track scores highest because it is fully separated.
+Completeness refers to the percentage of the road network that has any
+form of cycling infrastructure.</p>
+<table class="table">
+<colgroup>
+<col width="26%">
+<col width="23%">
+<col width="50%">
+</colgroup>
+<thead><tr class="header">
+<th>Level</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>🟢 1</td>
+<td><code>dedicated track</code></td>
+<td>Fully separated from motor traffic</td>
+</tr>
+<tr class="even">
+<td>🔵 2</td>
+<td><code>footway track</code></td>
+<td>Shared with pedestrians, separated from cars</td>
+</tr>
+<tr class="odd">
+<td>🟡 3</td>
+<td><code>painted lane</code></td>
+<td>Bike lane painted on road</td>
+</tr>
+<tr class="even">
+<td>🟠 4</td>
+<td><code>shared lane</code></td>
+<td>Shared with cars, light marking only</td>
+</tr>
+<tr class="odd">
+<td>🔴 5</td>
+<td><code>shared road</code></td>
+<td>Bikes permitted on normal road, no dedicated space</td>
+</tr>
+</tbody>
+</table>
+<p>The security while riding a bike it’s not just a convenience, it’s
+also an important factor that determines whether a person will use the
+bike as their primary way of moving. The cities that present a good bike
+infrastructure separated from the traffic, Amsterdam for instance, tend
+to have a larger number of bike users. The motivation to pursue this
+project also comes from the personal experience during these months
+lived in Münster. The quality of the bike infrastructure in this city
+along with the active community has motivated me enough to also purchase
+and use a bike during my stay. That said, evaluating and comparing the
+quality of these infrastructures between cities is quite difficult (data
+is dispersed, not standarized or no publibly accessible). For that, OSM
+offers an open data source that is well mantained that covers
+practically all cities around the globe. This package uses the data
+provided by OSM to convert the available labelling into a classification
+of security levels. As study cases, we have Münster and Amsterdam, two
+cities known by their strong bike culture. These two are somehow
+different from one another, letting us show the capabilities of the
+package and real differences in between both urban models.</p>
+</div>
+<div class="section level2">
+<h2 id="data-description-and-exploration">Data description and exploration<a class="anchor" aria-label="anchor" href="#data-description-and-exploration"></a>
+</h2>
+<p>The package ships two example datasets, <code>munster</code> and
+<code>amsterdam</code>, each a <code>cycling_network</code> object
+containing the OSM cycling infrastructure of the respective city as
+<code>sf</code> LINESTRING geometries with an <code>osm_tag</code>
+column describing the type of infrastructure.</p>
+</div>
+<div class="section level2">
+<h2 id="analysis">Analysis<a class="anchor" aria-label="anchor" href="#analysis"></a>
 </h2>
 <div class="section level3">
 <h3 id="case-study-of-münster">Case Study of Münster<a class="anchor" aria-label="anchor" href="#case-study-of-m%C3%BCnster"></a>
@@ -141,6 +224,17 @@ everything learnt:</p>
 <span><span class="co">## |dedicated track |           30.34|</span></span>
 <span><span class="co">## |painted lane    |            1.82|</span></span></code></pre>
 <p><img src="introduction_files/figure-html/safety-map-2.png" class="r-plt" alt="" width="100%"><img src="introduction_files/figure-html/safety-map-3.png" class="r-plt" alt="" width="100%"></p>
+<p>Before downloading anything, <code><a href="../reference/get_cycling_network.html">get_cycling_network()</a></code>
+checks wheter we have a copy of that city in our cachñe. If it finds a
+copy, then it will load it directly without making a query to OSM.
+However, if it doesn’t exist, it will ask OSM and then store a copy of
+the city in the caché for future queries, this way next executions will
+be way faster.</p>
+<p>For this reason, in this vignette, <code>data(munster)</code> and
+<code>get_cycling_network("Muenster, Germany")</code> would hace the
+same data that is already stored in the caché of the package. This is
+also allows <code>R CMD check</code> to work without internet
+access.</p>
 </div>
 <div class="section level3">
 <h3 id="comparison-in-between-2-cities">Comparison in between 2 cities<a class="anchor" aria-label="anchor" href="#comparison-in-between-2-cities"></a>
@@ -159,13 +253,45 @@ everything learnt:</p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/analyze_connectivity.html">analyze_connectivity</a></span><span class="op">(</span><span class="va">munster</span><span class="op">)</span></span></code></pre></div>
 <p><img src="introduction_files/figure-html/connectivity-1.png" class="r-plt" alt="" width="100%"></p>
 </div>
+</div>
+<div class="section level2">
+<h2 id="discussion">Discussion<a class="anchor" aria-label="anchor" href="#discussion"></a>
+</h2>
+<p>In Münster’s classification there ir a clear pattern, the “footway
+track” (Shared with pedestrians, separated from cars) is the main type
+of road, followed by “shared road” (Bikes permitted on normal road, no
+dedicated space). “Dedicated track” and “painted lane” are almost non
+existent. Adding more, there are no roads classified as “shared lane”,
+it seems like either this type of road is not used or not labeled like
+this in Munster’s network.</p>
+<p>Now, let’s compare to the city in the neighbor country, Amsterdam.
+While in Münster there is a predominance of shared roads (footway track
+and shared road), in Amsterdam it is very clear that “dedicated track”
+is the most prominent (we can see it through the green network taht
+extends through the city). This quite coherent with Amsterdam’s
+reputation on being a benchmark on bike infrastructure as the show star
+of the city. Münster seems to be more of a role model in coexistence
+between pedestrians and bike traffic.</p>
+<p>Let’s also take a look at the connectivity analysis, while Münster
+has a lot of green (so it’s in fact well connected), there is also a
+considerable amount of red segments (isolated) throughout the
+residential parts. This may be an indication of separation between the
+network outside the city center, which can actually correlate to more
+dangerous roads to ride on.</p>
+<p>Obviously, there are some limitations in the way we interpret these
+results. Firstly, the classification is solely based on how the
+contributors of OSM labelled each segemnt, which may not be consistent
+throughout all cities or mappers (this might affect on the comparison of
+cities for instance). And secondly, this classification is based only on
+the type of road, without taking into account factors like the amount of
+traffic or speed limits.</p>
 <div class="section level3">
 <h3 id="real-world-usage">Real world usage<a class="anchor" aria-label="anchor" href="#real-world-usage"></a>
 </h3>
 <p>In practice, instead of loading pre saved data, you would download
-the network directly from OpenStreetMap:</p>
+the network directly from OSM:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># download directly from OpenStreetMap (requires internet connection)</span></span>
+<code class="sourceCode R"><span><span class="co"># download directly from OSM (requires internet connection)</span></span>
 <span><span class="va">munster</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_cycling_network.html">get_cycling_network</a></span><span class="op">(</span><span class="st">"Muenster, Germany"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">munster</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">munster</span><span class="op">)</span></span>
@@ -177,7 +303,34 @@ the network directly from OpenStreetMap:</p>
 <span><span class="co"># compare with another city</span></span>
 <span><span class="va">amsterdam</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_cycling_network.html">get_cycling_network</a></span><span class="op">(</span><span class="st">"Amsterdam, Netherlands"</span><span class="op">)</span></span>
 <span><span class="va">amsterdam_classified</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/classify_bike_infrastructure.html">classify_bike_infrastructure</a></span><span class="op">(</span><span class="va">amsterdam</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/plot_cycling_safety_map.html">plot_cycling_safety_map</a></span><span class="op">(</span><span class="va">amsterdam_classified</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/plot_cycling_safety_map.html">plot_cycling_safety_map</a></span><span class="op">(</span><span class="va">amsterdam_classified</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># side-by-side comparison of two cities</span></span>
+<span><span class="fu"><a href="../reference/compare_cities.html">compare_cities</a></span><span class="op">(</span><span class="va">munster_classified</span>, <span class="va">amsterdam_classified</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># connectivity analysis</span></span>
+<span><span class="fu"><a href="../reference/analyze_connectivity.html">analyze_connectivity</a></span><span class="op">(</span><span class="va">munster</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="llm-usage">LLM usage<a class="anchor" aria-label="anchor" href="#llm-usage"></a>
+</h3>
+<ul>
+<li><p><strong>LLM tool used:</strong> Claude (Anthropic) — Claude
+Sonnet 4.5</p></li>
+<li>
+<p><strong>Purpose:</strong> Claude was used throughout the
+development of this package for:</p>
+<ul>
+<li>writing and debugging R code for the exported functions (data
+download via <code>osmdata</code>, classification logic, etc.)</li>
+<li>troubleshooting package-specific errors (namespace/import issues,
+<code>R CMD check</code> notes, CRS handling in <code>sf</code>)</li>
+<li>writing roxygen2 documentation for functions and datasets</li>
+<li>drafting and refining the vignette text and structure</li>
+</ul>
+</li>
+<li><p><strong>Percentage of code LLM-generated:</strong> 35%</p></li>
+</ul>
 </div>
 </div>
   </div>

@@ -249,30 +249,34 @@
 </tr>
 </tbody>
 </table>
+<p>All five functions above are S3 generics: <code><a href="reference/classify_bike_infrastructure.html">classify_bike_infrastructure()</a></code> and <code><a href="reference/analyze_connectivity.html">analyze_connectivity()</a></code> dispatch on <code>cycling_network</code> objects, while <code><a href="reference/plot_cycling_safety_map.html">plot_cycling_safety_map()</a></code> and <code><a href="reference/compare_cities.html">compare_cities()</a></code> dispatch on <code>cycling_classification</code> objects. Each generic also has a <code>.default</code> method that raises an informative error if called on an unsupported object type.</p>
 <hr>
 </div>
 <div class="section level2">
 <h2 id="example-output">Example output<a class="anchor" aria-label="anchor" href="#example-output"></a>
 </h2>
-<p>Running <code><a href="reference/plot_cycling_safety_map.html">plot_cycling_safety_map()</a></code> on Münster produces a map like this, green dominates, which reflects Münster’s reputation as one of Germany’s most cycling friendly cities 🚲</p>
 <div class="section level3">
 <h3 id="münster-germany-de">Münster, Germany 🇩🇪<a class="anchor" aria-label="anchor" href="#m%C3%BCnster-germany-de"></a>
 </h3>
+<p>Running <code><a href="reference/plot_cycling_safety_map.html">plot_cycling_safety_map()</a></code> on Münster produces a map like this, green dominates, which reflects Münster’s reputation as one of Germany’s most cycling friendly cities 🚲</p>
 <p><img src="reference/figures/munster_map.png" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="amsterdam-netherlands-netherlands">Amsterdam, Netherlands 🇳🇱<a class="anchor" aria-label="anchor" href="#amsterdam-netherlands-netherlands"></a>
 </h3>
+<p>If we execute <code><a href="reference/plot_cycling_safety_map.html">plot_cycling_safety_map()</a></code> on Amsterdam, the map shows a larger proportion of green (“dedicated track”) than in Münster. Make sense since Amsterdam has its reputation on being THE city FOR bikes 🚲</p>
 <p><img src="reference/figures/amsterdam_map.png" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="comparison-de-vs-netherlands">Comparison 🇩🇪 vs 🇳🇱<a class="anchor" aria-label="anchor" href="#comparison-de-vs-netherlands"></a>
 </h3>
+<p><code><a href="reference/compare_cities.html">compare_cities()</a></code> allows us to visualize the maps for both cities using the same exact color palette, this facilitates the visual comparison between the type of instrastructure used in these cities without needing to check the summary tables 🚲</p>
 <p><img src="reference/figures/comparison_map.png" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="connectivity-analysis-de">Connectivity analysis 🇩🇪<a class="anchor" aria-label="anchor" href="#connectivity-analysis-de"></a>
 </h3>
+<p><code><a href="reference/analyze_connectivity.html">analyze_connectivity()</a></code> is meant to analyze which segments from the network are part of a bigger segment (green) compared to the ones that remain isolated (red). In other words, which sections are we not able to reach WITHOUT exiting the bike lane 🚲</p>
 <p><img src="reference/figures/connectivity_map.png" width="700"></p>
 <hr>
 </div>
@@ -297,7 +301,7 @@
 </h2>
 <p><strong>Andrea Belen Cretu Toma</strong></p>
 <p><a href="https://www.linkedin.com/in/belen-cretu-toma/" class="external-link"><img src="https://img.shields.io/badge/LinkedIn-blue?logo=linkedin" alt="LinkedIn"></a> <a href="https://github.com/al415615" class="external-link"><img src="https://img.shields.io/badge/GitHub-black?logo=github" alt="GitHub"></a></p>
-<p><em>Assignment 2 · Spatial Data Science with R · University of Münster, 2026</em></p>
+<p><em>Final assignment · Spatial Data Science with R · University of Münster, 2026</em></p>
 </div>
 </div>
   </div>
