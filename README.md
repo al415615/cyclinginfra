@@ -117,22 +117,34 @@ print(cl)
 | `compare_cities(city1, city2)` | Side by side comparison of two cities |
 | `analyze_connectivity(network)` | Identify connected and isolated segments |
 
+All five functions above are S3 generics: `classify_bike_infrastructure()` and `analyze_connectivity()` dispatch on `cycling_network` objects, while `plot_cycling_safety_map()` and `compare_cities()` dispatch on `cycling_classification` objects. Each generic also has a `.default` method that raises an informative error if called on an unsupported object type.
+
 ---
 
 ## Example output
 
+### Münster, Germany 🇩🇪
+
 Running `plot_cycling_safety_map()` on Münster produces a map like this, green dominates, which reflects Münster's reputation as one of Germany's most cycling friendly cities 🚲
 
-### Münster, Germany 🇩🇪
 <img src="man/figures/munster_map.png" width="700"/>
 
 ### Amsterdam, Netherlands 🇳🇱
+
+If we execute `plot_cycling_safety_map()` on Amsterdam, the map shows a larger proportion of green ("dedicated track") than in Münster. Make sense since Amsterdam has its reputation on being THE city FOR bikes 🚲
+
 <img src="man/figures/amsterdam_map.png" width="700"/>
 
 ### Comparison 🇩🇪 vs 🇳🇱
+
+`compare_cities()` allows us to visualize the maps for both cities using the same exact color palette, this facilitates the visual comparison between the type of instrastructure used in these cities without needing to check the summary tables 🚲
+
 <img src="man/figures/comparison_map.png" width="700"/>
 
 ### Connectivity analysis 🇩🇪
+
+`analyze_connectivity()` is meant to analyze which segments from the network are part of a bigger segment (green) compared to the ones that remain isolated (red). In other words, which sections are we not able to reach WITHOUT exiting the bike lane 🚲
+
 <img src="man/figures/connectivity_map.png" width="700"/>
 
 ---
@@ -161,4 +173,4 @@ All data come from [OpenStreetMap](https://www.openstreetmap.org) contributors, 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/belen-cretu-toma/)
 [![GitHub](https://img.shields.io/badge/GitHub-black?logo=github)](https://github.com/al415615)
 
-*Assignment 2 · Spatial Data Science with R · University of Münster, 2026*
+*Final assignment · Spatial Data Science with R · University of Münster, 2026*

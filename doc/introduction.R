@@ -33,7 +33,7 @@ compare_cities(munster_classified, amsterdam_classified)
 analyze_connectivity(munster)
 
 ## ----real-usage, eval = FALSE-------------------------------------------------
-# # download directly from OpenStreetMap (requires internet connection)
+# # download directly from OSM (requires internet connection)
 # munster <- get_cycling_network("Muenster, Germany")
 # print(munster)
 # plot(munster)
@@ -46,4 +46,10 @@ analyze_connectivity(munster)
 # amsterdam <- get_cycling_network("Amsterdam, Netherlands")
 # amsterdam_classified <- classify_bike_infrastructure(amsterdam)
 # plot_cycling_safety_map(amsterdam_classified)
+# 
+# # side-by-side comparison of two cities
+# compare_cities(munster_classified, amsterdam_classified)
+# 
+# # connectivity analysis
+# analyze_connectivity(munster)
 
