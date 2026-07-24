@@ -6,3 +6,6 @@
 .quarto
 /Meta/
 /doc/
+
+/.quarto/
+**/*.quarto_ipynb

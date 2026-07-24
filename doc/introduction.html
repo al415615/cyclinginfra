@@ -534,7 +534,13 @@ traffic or speed limits.</p>
 <div id="real-world-usage" class="section level2">
 <h2>Real world usage</h2>
 <p>In practice, instead of loading pre saved data, you would download
-the network directly from OSM:</p>
+the network directly from OSM.</p>
+<p>Note that <code>get_cycling_network()</code> writes to a local cache
+folder on disk (obtained via <code>tools::R_user_dir()</code>) the first
+time it is called for a given city, and reads from it on subsequent
+calls. Antes de descargar nada, <code>get_cycling_network()</code>
+comprueba si ya existe una copia guardada en caché local para esa
+ciudad…</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># download directly from OSM (requires internet connection)</span></span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>munster <span class="ot">&lt;-</span> <span class="fu">get_cycling_network</span>(<span class="st">&quot;Muenster, Germany&quot;</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fu">print</span>(munster)</span>

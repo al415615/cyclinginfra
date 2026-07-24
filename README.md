@@ -48,6 +48,8 @@ The package uses the following packages, all installed automatically:
 
 ## Quick start
 
+**Note:** `get_cycling_network()` caches downloaded data locally (via `tools::R_user_dir("cyclinginfra", which = "cache")`) so repeated calls for the same city don't re-download from OpenStreetMap. This means the function writes small `.rds` files to a package-specific cache folder on your machine.
+
 ```r
 library(cyclinginfra)
 

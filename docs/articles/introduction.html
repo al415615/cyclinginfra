@@ -289,7 +289,13 @@ traffic or speed limits.</p>
 <h3 id="real-world-usage">Real world usage<a class="anchor" aria-label="anchor" href="#real-world-usage"></a>
 </h3>
 <p>In practice, instead of loading pre saved data, you would download
-the network directly from OSM:</p>
+the network directly from OSM.</p>
+<p>Note that <code><a href="../reference/get_cycling_network.html">get_cycling_network()</a></code> writes to a local cache
+folder on disk (obtained via <code><a href="https://rdrr.io/r/tools/userdir.html" class="external-link">tools::R_user_dir()</a></code>) the first
+time it is called for a given city, and reads from it on subsequent
+calls. Antes de descargar nada, <code><a href="../reference/get_cycling_network.html">get_cycling_network()</a></code>
+comprueba si ya existe una copia guardada en caché local para esa
+ciudad…</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># download directly from OSM (requires internet connection)</span></span>
 <span><span class="va">munster</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_cycling_network.html">get_cycling_network</a></span><span class="op">(</span><span class="st">"Muenster, Germany"</span><span class="op">)</span></span>

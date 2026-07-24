@@ -98,7 +98,9 @@ Obviously, there are some limitations in the way we interpret these results. Fir
 
 ## Real world usage
 
-In practice, instead of loading pre saved data, you would download the network directly from OSM:
+In practice, instead of loading pre saved data, you would download the network directly from OSM.
+
+Note that `get_cycling_network()` writes to a local cache folder on disk (obtained via `tools::R_user_dir()`) the first time it is called for a given city, and reads from it on subsequent calls. Antes de descargar nada, `get_cycling_network()` comprueba si ya existe una copia guardada en caché local para esa ciudad...
 
 ```{r real-usage, eval = FALSE}
 # download directly from OSM (requires internet connection)
